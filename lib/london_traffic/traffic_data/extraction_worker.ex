@@ -2,7 +2,7 @@ defmodule LondonTraffic.TrafficData.ExtractionWorker do
   alias LondonTraffic.TrafficData.Extract.Run
   use GenServer
 
-  @time_to_subtract 60000 # millaseconds
+  @time_to_subtract 0 # millaseconds
 
   def start_link do
     GenServer.start_link(__MODULE__, %{})
