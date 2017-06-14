@@ -5,13 +5,9 @@ defmodule LondonTraffic.TrafficData.Extract.Run do
 
   def save_data do
     with {:ok, data} <- Request.pull,
-         {:ok, parsed_data} <- Parse.parse(data) do
-           changeset = TrafficData.changeset(%TrafficData{}, parsed_data)
-           case Repo.insert(changeset) do
-            {:ok, _} -> :ok
-            {:error, _changeset} -> :error
-           end
-    end
+         {:ok, parsed_data} <- Parse.parse(data),
+         {:ok, _} <- Repo.insert_all(TrafficData, parsed_data) do
+           :ok
+         end
   end
-
 end
