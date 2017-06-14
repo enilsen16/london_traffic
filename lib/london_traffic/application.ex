@@ -13,7 +13,7 @@ defmodule LondonTraffic.Application do
       # Start the endpoint when the application starts
       supervisor(LondonTraffic.Web.Endpoint, []),
       # Start your own worker by calling: LondonTraffic.Worker.start_link(arg1, arg2, arg3)
-      # worker(LondonTraffic.Worker, [arg1, arg2, arg3]),
+      worker(LondonTraffic.TrafficData.ExtractionWorker, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
