@@ -1,5 +1,5 @@
 defmodule LondonTraffic.TrafficData.RequestTest do
-  alias LondonTraffic.TrafficData.Request, as: TrafficData
+  alias LondonTraffic.TrafficData.Extract.Request, as: TrafficData
   use ExUnit.Case, async: false
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
