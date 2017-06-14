@@ -30,6 +30,7 @@ defmodule LondonTraffic.Mixfile do
   defp deps do
     [
      {:cowboy, "~> 1.0"},
+     {:exvcr, "~> 0.8", only: :test},
      {:gettext, "~> 0.11"},
      {:httpoison, "~> 0.11"},
      {:phoenix_ecto, "~> 3.2"},
