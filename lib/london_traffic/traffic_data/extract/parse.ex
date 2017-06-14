@@ -1,4 +1,4 @@
-defmodule LondonTraffic.TrafficData.Parse do
+defmodule LondonTraffic.TrafficData.Extract.Parse do
   import SweetXml
 
   def parse(xml_data) do
@@ -12,10 +12,12 @@ defmodule LondonTraffic.TrafficData.Parse do
         longitude: ~x"./coordinatesEN/text()"
       ],
       current_update: ~x"./currentUpdate/text()",
+      end_time: ~x"./endTime/text()",
       id: ~x"./@id",
       location: ~x"./location/text()",
       severity: ~x"./severity/text()",
       status: ~x"./status/text()",
+      start_time: ~x"./startTime/text()",
       sub_category: ~x"./subCategory/text()"
     )
   end

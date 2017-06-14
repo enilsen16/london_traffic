@@ -1,4 +1,4 @@
-defmodule LondonTraffic.TrafficData.Request do
+defmodule LondonTraffic.TrafficData.Extract.Request do
   @url "https://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml"
 
   def pull do
