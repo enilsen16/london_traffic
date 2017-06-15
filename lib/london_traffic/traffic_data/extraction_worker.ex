@@ -2,7 +2,8 @@ defmodule LondonTraffic.TrafficData.ExtractionWorker do
   alias LondonTraffic.TrafficData.Extract.Run
   use GenServer
 
-  @time_to_subtract 0 # millaseconds
+  # If you need to change how long this waits until each execution just change it from 600000 millaseconds to something smaller.
+  @time_to_subtract 600000 # millaseconds
 
   def start_link do
     GenServer.start_link(__MODULE__, %{})

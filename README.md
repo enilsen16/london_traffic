@@ -1,20 +1,10 @@
 # LondonTraffic
+An Elixir OTP application that saves the most recent london traffic incidents and then displays them on a google map
 
-To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
-
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+## To Run:
+  - Make sure you have Elixir and Node installed
+  - Export a google maps api key into your path
+  - Install dependencies with `mix deps.get`
+  - Run with `mix phx.start`
+  - Navigate to `localhost:4000` in a web browser

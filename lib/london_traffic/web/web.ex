@@ -22,6 +22,10 @@ defmodule LondonTraffic.Web do
       import Plug.Conn
       import LondonTraffic.Web.Router.Helpers
       import LondonTraffic.Web.Gettext
+
+      alias LondonTraffic.Repo
+      alias LondonTraffic.TrafficData.TrafficData
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 

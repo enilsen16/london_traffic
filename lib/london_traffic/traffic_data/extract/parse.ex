@@ -18,12 +18,4 @@ defmodule LondonTraffic.TrafficData.Extract.Parse do
     )
     {:ok, data}
   end
-
-  def strip_out_ll(coordinate_string) do
-    # Expose this to other parts of the application
-    # by testing a pair of values returned from the API, it's clear that longitude is first and latitude is second
-    [longitude, latitude] = String.split(coordinate_string, ",")
-    # Reverse the order :D
-    {:ok, [latitude, longitude]}
-  end
 end
