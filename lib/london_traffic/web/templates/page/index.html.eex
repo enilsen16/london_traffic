@@ -4,6 +4,7 @@
 <script>
   function initMap() {
     var valsFromElixir = <%= raw(@traffic_data) %>;
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var london = {
       "lat": 51.5074,
       "lng": 0.1278
@@ -13,11 +14,15 @@
       "center": london
     });
 
-    valsFromElixir.forEach(function(pos) {
-        new google.maps.Marker({
-          "position": pos,
-          "map": map
-        });
-      })
-    }
+    var markers = valsFromElixir.map(function(location, i) {
+      return new google.maps.Marker({
+        position: location,
+        label: labels[i % labels.length]
+      });
+    })
+
+    var markerCluster = new MarkerClusterer(map, markers, {
+      imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+    });
+  }
 </script>
