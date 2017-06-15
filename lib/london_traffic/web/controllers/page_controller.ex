@@ -5,15 +5,15 @@ defmodule LondonTraffic.Web.PageController do
     # pull all traffic data and send it to the index template
     today = DateTime.utc_now()
     traffic_data = Repo.all(
-      from t in TrafficData, where: t.end_time >= ^today
+      from t in TrafficData, where: t.end_time >= ^today or is_nil(t.end_time)
     )
-    
+
     render conn, "index.html", traffic_data: encode_coords(traffic_data)
   end
 
 # Helper Functions
-
   defp insert_zero(val) do
+    # This is to convert the longitude and latitude coordinates from string to floats. They need a leading zero.
     cond do
       String.starts_with?(val, "-.") -> String.replace(val, "-.", "-0.")
       String.starts_with?(val, ".") -> String.replace(val, ".", "0.")
