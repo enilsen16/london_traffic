@@ -23,12 +23,12 @@ defmodule LondonTraffic.Web.PageController do
 
   defp encode_coords(traffic_data) do
   coords = Enum.map(traffic_data, fn x ->
-      [ long, lat ] = String.split(x.coordinates, ",")
+      [long, lat] = String.split(x.coordinates, ",")
       long = insert_zero long
       lat = insert_zero lat
 
-      { parsed_long, _ } = Float.parse long
-      { parsed_lat, _ } = Float.parse lat
+      {parsed_long, _} = Float.parse long
+      {parsed_lat, _} = Float.parse lat
       %{lat: parsed_lat, lng: parsed_long}
     end)
     Poison.encode!(coords)
