@@ -28,8 +28,7 @@
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
     </script>
-    <script async defer
-    src=<%= "https://maps.googleapis.com/maps/api/js?key=" <> Application.get_env(:london_traffic, :google_maps_api_key)  <> "&callback=initMap"%>>
+    <script async defer src=<%= Enum.join(["https://maps.googleapis.com/maps/api/js?key=", Application.get_env(:london_traffic, :google_maps_api_key), "&callback=initMap"], "")%>>
     </script>
   </body>
 </html>
