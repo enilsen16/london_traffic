@@ -21,6 +21,9 @@ config :london_traffic, LondonTraffic.Web.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+config :london_traffic,
+  google_maps_api_key: System.get_env("MAPS_API_KEY")
+
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

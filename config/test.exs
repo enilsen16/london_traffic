@@ -9,6 +9,9 @@ config :london_traffic, LondonTraffic.Web.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+config :london_traffic,
+  google_maps_api_key: System.get_env("MAPS_API_KEY")
+
 # Configure your database
 config :london_traffic, LondonTraffic.Repo,
   adapter: Ecto.Adapters.Postgres,

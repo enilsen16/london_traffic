@@ -30,6 +30,9 @@ config :london_traffic, LondonTraffic.Web.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
+config :london_traffic,
+  google_maps_api_key: System.get_env("MAPS_API_KEY")
+
 # Watch static and templates for browser reloading.
 config :london_traffic, LondonTraffic.Web.Endpoint,
   live_reload: [
